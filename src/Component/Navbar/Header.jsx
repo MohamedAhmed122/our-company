@@ -49,7 +49,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    zIndex: theme.zIndex.modal + 1,
+    [theme.breakpoints.down("md")]: {
+      zIndex: theme.zIndex.modal + 1,
+    },
+
   },
 }));
 function ElevationScroll(props) {

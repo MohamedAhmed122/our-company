@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
     menuItem: {
       fontFamily: "Raleway",
       fontWeight: 400,
+      color: 'white',
       opacity: 0.5,
       "&:hover": {
         opacity: 1.3,

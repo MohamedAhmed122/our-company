@@ -6,22 +6,27 @@ import Header from "./Component/Navbar/Header";
 import theme from "./theme/theme";
 import Home from './Pages/HomePage/Home'
 import Footer from "./Layouts/Footer/Footer";
-
+import ServicePage from './Pages/ServicePages/ServicePage'
+import CustomPage from "./Pages/ServicePages/CustomService";
+import MobilePage from './Pages/ServicePages/MobilePage'
 
 function App() {
-  return (
+return (
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <div className="App">
-          <Header />
-          <Switch>
-            <Route exact path='/' component={Home} />
-          </Switch>
-        </div>
-        <Footer />
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+                <div className="App">
+                <Header />
+                    <Switch>
+                        <Route exact path='/' component={Home} />
+                        <Route path= '/service' component={ServicePage} />
+                        <Route path='/customDevlopment' component={CustomPage} />
+                        <Route path='/mobileApp' component={MobilePage} />
+                    </Switch>
+                </div>
+            <Footer />
+        </ThemeProvider>
     </BrowserRouter>
-  );
+);
 }
 
 export default App;

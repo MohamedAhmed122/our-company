@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { makeStyles, useTheme, useScrollTrigger } from "@material-ui/core";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import logo from "../..//assets/logo.svg";
+import logo from "../..//assets/logo.png";
 import { AppBar, Toolbar } from "@material-ui/core";
 import NavbarTabs from "./Tabs";
 import Drawer from "./DrawerNavbar";

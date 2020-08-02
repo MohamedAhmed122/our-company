@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
@@ -129,9 +129,10 @@ export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
+  const [value,setValue] =useState(0)
 
   const handleChange = (e, newValue) => {
-    props.setValue(newValue);
+    setValue(newValue);
   };
 
   const handleClick = e => {
@@ -142,7 +143,7 @@ export default function Header(props) {
   const handleMenuItemClick = (e, i) => {
     setAnchorEl(null);
     setOpenMenu(false);
-    props.setSelectedIndex(i);
+    
   };
 
   const handleClose = e => {
@@ -187,33 +188,13 @@ export default function Header(props) {
     { name: "Contact Us", link: "/contact", activeIndex: 4 }
   ];
 
-  useEffect(() => {
-    [...menuOptions, ...routes].forEach(route => {
-      switch (window.location.pathname) {
-        case `${route.link}`:
-          if (props.value !== route.activeIndex) {
-            props.setValue(route.activeIndex);
-            if (
-              route.selectedIndex &&
-              route.selectedIndex !== props.selectedIndex
-            ) {
-              props.setSelectedIndex(route.selectedIndex);
-            }
-          }
-          break;
-        case "/estimate":
-          props.setValue(5);
-          break;
-        default:
-          break;
-      }
-    });
-  }, [props.value, menuOptions, props.selectedIndex, routes, props]);
+
+
 
   const tabs = (
     <React.Fragment>
       <Tabs
-        value={props.value}
+        value={value}
         onChange={handleChange}
         className={classes.tabContainer}
         indicatorColor="primary"
@@ -237,7 +218,7 @@ export default function Header(props) {
         variant="contained"
         color="secondary"
         className={classes.button}
-        onClick={() => props.setValue(5)}
+        onClick={() => setValue(5)}
       >
         Free Estimate
       </Button>
@@ -262,10 +243,9 @@ export default function Header(props) {
             classes={{ root: classes.menuItem }}
             onClick={event => {
               handleMenuItemClick(event, i);
-              props.setValue(1);
+              setValue(1);
               handleClose();
             }}
-            selected={i === props.selectedIndex && props.value === 1}
           >
             {option.name}
           </MenuItem>
@@ -297,7 +277,7 @@ export default function Header(props) {
               classes={{ selected: classes.drawerItemSelected }}
               onClick={() => {
                 setOpenDrawer(false);
-                props.setValue(route.activeIndex);
+                setValue(route.activeIndex);
               }}
             >
               <ListItemText className={classes.drawerItem} disableTypography>
@@ -308,7 +288,7 @@ export default function Header(props) {
           <ListItem
             onClick={() => {
               setOpenDrawer(false);
-              props.setValue(5);
+              setValue(5);
             }}
             divider
             button
@@ -318,7 +298,7 @@ export default function Header(props) {
               selected: classes.drawerItemSelected
             }}
             to="/estimate"
-            selected={props.value === 5}
+            
           >
             <ListItemText className={classes.drawerItem} disableTypography>
               Free Estimate
@@ -345,7 +325,7 @@ export default function Header(props) {
               component={Link}
               to="/"
               disableRipple
-              onClick={() => props.setValue(0)}
+              onClick={() => setValue(0)}
               className={classes.logoContainer}
             >
               <img alt="company logo" className={classes.logo} src={logo} />

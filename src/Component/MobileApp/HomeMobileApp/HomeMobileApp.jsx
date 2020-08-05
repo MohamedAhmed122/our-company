@@ -69,6 +69,9 @@ const useStyles= makeStyles((theme)=>({
         }
       },
       learnButton:{
-          ...theme.typography.learnButton
+          ...theme.typography.learnButton,
+          [theme.breakpoints.down("sm")]: {
+            marginBottom: '1rem',
+          }
       }
 }))

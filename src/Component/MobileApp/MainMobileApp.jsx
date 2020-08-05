@@ -69,7 +69,6 @@ return (
                 style={{ backgroundColor: "transparent" }}
                 component={Link}
                 to="/customsoftware"
-                onClick={() => props.setSelectedIndex(1)}
                 >
                 <img
                     src={backArrow}

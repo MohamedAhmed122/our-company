@@ -14,19 +14,19 @@ import history from '../../assets/history.svg'
 const Header =()=>{
     const classes = useStyles();
     const TeamMembers=[
-    {name: 'Sarah Ahmed', job:'UI/UX designer', photo: actor1,
-    text:'The continued development and maintenance of Material-UI is'},
+    {name: 'Sarah Ahmed', job:'Mobile App developer', photo: actor1,
+    text:'I build Flexible and secure Mobile apps using  Java and kotlin'},
     {name: 'Mahmoud Ahmed', job:'Back end developer', photo: oda,
-    text:'The continued development and maintenance of Material-UI is'},
-    {name: 'Tamem Ahmed', job:'Mobile Application developer', photo: actor2,
-    text:'The continued development and maintenance of Material-UI is '}]
+    text:'I build a Secure Websites using C sharp '},
+    {name: 'Sasha Ivan', job:'UI/UX designer', photo: actor2,
+    text:'I use Adobe XD and Figma To design professional prototypes for websites & apps '}]
     const TeamMembers2=[
-        {name: 'Sarah Ahmed', job:'UI/UX designer', photo: mohamed,
-        text:'The continued development and maintenance of Material-UI is'},
-        {name: 'Mahmoud Ahmed', job:'Back end developer', photo: actor3,
-        text:'The continued development and maintenance of Material-UI is'},
-        {name: 'Tamem Ahmed', job:'Mobile Application developer', photo: actor4,
-        text:'The continued development and maintenance of Material-UI is '}]
+        {name: 'Marshall Mohamed', job:'animator & illustrator', photo: mohamed,
+        text:'I make static things move and I use Photoshop and After Efects'},
+        {name: 'Kellyn Duarte', job:'Front end developer', photo: actor3,
+        text:'I convert any prototypes to Website I use React & Vuejs'},
+        {name: 'Jim Smith', job:'Mobile Application developer', photo: actor4,
+        text:'I build Flexible and secure Mobile apps using Java and kotlin'}]
     return(
         <Fragment>
             <Grid container direction='column' style={{marginTop: '8rem'}}>
@@ -36,7 +36,7 @@ const Header =()=>{
                 <Grid item>
                     <Typography variant='subtitle2' className={classes.aboutp}>Whether it be person to person, business to consumer, 
                     or an individual to their interests, technology is meant to bring us closer to what
-                    we care about in the best way possible. Arc Development will use that principle to provide fast,
+                    we care about in the best way possible. Smart Dev will use that principle to provide fast,
                     modern, inexpensive, and aesthetic software to the Midwest and beyond.
                     </Typography>
                 </Grid>
@@ -48,7 +48,7 @@ const Header =()=>{
                 <Grid item className={classes.historyGrid}>
                     <Typography variant='h5' style={{color:'#868686'}}>We’re the old father on the block.</Typography>
                     <Typography variant='subtitle1' paragraph>
-                        Founded in 2019, we’re ready to get our hands on the world’s business problems
+                        Founded in 2016, we’re ready to get our hands on the world’s business problems
                     </Typography>
                     <Typography variant='subtitle1' paragraph>
                     It all started with one question: Why aren’t all businesses using available technology?

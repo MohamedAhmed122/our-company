@@ -102,9 +102,8 @@ export default function CustomSoftware(props) {
           >
             <IconButton
               style={{ backgroundColor: "transparent" }}
-              component={Link}
               to="/services"
-              onClick={() => props.setSelectedIndex(0)}
+              component={Link}
             >
               <img src={backArrow} alt="Back to Services Page" />
             </IconButton>
@@ -123,7 +122,7 @@ export default function CustomSoftware(props) {
               paragraph
             >
               Whether we’re replacing old software or inventing new solutions,
-              Arc Development is here to help your business tackle technology.
+              Smart Dev is here to help your business tackle technology.
             </Typography>
             <Typography
               align={matchesMD ? "center" : undefined}
@@ -162,7 +161,6 @@ export default function CustomSoftware(props) {
               style={{ backgroundColor: "transparent" }}
               component={Link}
               to="/mobileapps"
-              onClick={() => props.setSelectedIndex(2)}
             >
               <img
                 src={forwardArrow}

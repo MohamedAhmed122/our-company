@@ -13,7 +13,7 @@ const OurWork =()=>{
     return(
         <Fragment>
             <Grid container item style={{marginTop: '10rem'}} >
-                <Typography variant='h2'>Latest Work</Typography>
+                <Typography variant='h2' className={classes.title}>Latest Work</Typography>
             </Grid>
             <Grid container justify='space-between'>
                 {
@@ -55,6 +55,7 @@ filter:' brightness(20%)',
 },
 card:{
     borderRadius: 15,
+    cursor : 'pointer',
     marginBottom: '3rem',
     '&:hover':{
         boxShadow: theme.shadows[4],
@@ -70,5 +71,9 @@ card:{
 workTitle:{
     marginLeft:'4rem',
     marginBottom:  '3rem'
+},
+title:{
+    marginLeft: '4rem',
+    marginBottom: '4rem'
 }
 }))

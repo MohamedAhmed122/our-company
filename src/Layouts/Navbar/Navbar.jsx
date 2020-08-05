@@ -18,54 +18,54 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 
 function ElevationScroll(props) {
   const { children } = props;
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 0
+    threshold: 0,
   });
 
   return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0
+    elevation: trigger ? 4 : 0,
   });
 }
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: "3em",
     [theme.breakpoints.down("md")]: {
-      marginBottom: "2em"
+      marginBottom: "2em",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom: "1.25em"
-    }
+      marginBottom: "1.25em",
+    },
   },
   logo: {
     height: "8em",
     [theme.breakpoints.down("md")]: {
-      height: "7em"
+      height: "7em",
     },
     [theme.breakpoints.down("xs")]: {
-      height: "5.5em"
-    }
+      height: "5.5em",
+    },
   },
   logoContainer: {
     padding: 0,
     "&:hover": {
-      backgroundColor: "transparent"
-    }
+      backgroundColor: "transparent",
+    },
   },
   tabContainer: {
-    marginLeft: "auto"
+    marginLeft: "auto",
   },
   tab: {
     ...theme.typography.tab,
     minWidth: 10,
-    marginLeft: "25px"
+    marginLeft: "25px",
   },
   button: {
     ...theme.typography.estimate,
@@ -74,50 +74,50 @@ const useStyles = makeStyles(theme => ({
     marginRight: "25px",
     height: "45px",
     "&:hover": {
-      backgroundColor: theme.palette.secondary.light
-    }
+      backgroundColor: theme.palette.secondary.light,
+    },
   },
   menu: {
     backgroundColor: theme.palette.common.blue,
     color: "white",
-    borderRadius: "0px"
+    borderRadius: "0px",
   },
   menuItem: {
     ...theme.typography.tab,
     opacity: 0.7,
     "&:hover": {
-      opacity: 1
-    }
+      opacity: 1,
+    },
   },
   drawerIcon: {
     height: "50px",
-    width: "50px"
+    width: "50px",
   },
   drawerIconContainer: {
     marginLeft: "auto",
     "&:hover": {
-      backgroundColor: "transparent"
-    }
+      backgroundColor: "transparent",
+    },
   },
   drawer: {
-    backgroundColor: theme.palette.common.blue
+    backgroundColor: theme.palette.common.blue,
   },
   drawerItem: {
     ...theme.typography.tab,
     color: "white",
-    opacity: 0.7
+    opacity: 0.7,
   },
   drawerItemEstimate: {
-    backgroundColor: theme.palette.common.orange
+    backgroundColor: theme.palette.common.orange,
   },
   drawerItemSelected: {
     "& .MuiListItemText-root": {
-      opacity: 1
-    }
+      opacity: 1,
+    },
   },
   appbar: {
-    zIndex: theme.zIndex.modal + 1
-  }
+    zIndex: theme.zIndex.modal + 1,
+  },
 }));
 
 export default function Header(props) {
@@ -129,13 +129,13 @@ export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
-  const [value,setValue] =useState(0)
+  const [value, setValue] = useState(0);
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
   };
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     setAnchorEl(e.currentTarget);
     setOpenMenu(true);
   };
@@ -143,10 +143,9 @@ export default function Header(props) {
   const handleMenuItemClick = (e, i) => {
     setAnchorEl(null);
     setOpenMenu(false);
-    
   };
 
-  const handleClose = e => {
+  const handleClose = (e) => {
     setAnchorEl(null);
     setOpenMenu(false);
   };
@@ -157,20 +156,20 @@ export default function Header(props) {
       name: "Custom Software Development",
       link: "/customsoftware",
       activeIndex: 1,
-      selectedIndex: 1
+      selectedIndex: 1,
     },
     {
       name: "iOS/Android App Development",
       link: "/mobileapps",
       activeIndex: 1,
-      selectedIndex: 2
+      selectedIndex: 2,
     },
     {
       name: "Website Development",
       link: "/websites",
       activeIndex: 1,
-      selectedIndex: 3
-    }
+      selectedIndex: 3,
+    },
   ];
 
   const routes = [
@@ -181,15 +180,12 @@ export default function Header(props) {
       activeIndex: 1,
       ariaOwns: anchorEl ? "simple-menu" : undefined,
       ariaPopup: anchorEl ? "true" : undefined,
-      mouseOver: event => handleClick(event)
+      mouseOver: (event) => handleClick(event),
     },
     { name: "The Revolution", link: "/revolution", activeIndex: 2 },
     { name: "About Us", link: "/about", activeIndex: 3 },
-    { name: "Contact Us", link: "/contact", activeIndex: 4 }
+    { name: "Contact Us", link: "/contact", activeIndex: 4 },
   ];
-
-
-
 
   const tabs = (
     <React.Fragment>
@@ -229,7 +225,7 @@ export default function Header(props) {
         onClose={handleClose}
         classes={{ paper: classes.menu }}
         MenuListProps={{
-          onMouseLeave: handleClose
+          onMouseLeave: handleClose,
         }}
         elevation={0}
         style={{ zIndex: 1302 }}
@@ -241,7 +237,7 @@ export default function Header(props) {
             component={Link}
             to={option.link}
             classes={{ root: classes.menuItem }}
-            onClick={event => {
+            onClick={(event) => {
               handleMenuItemClick(event, i);
               setValue(1);
               handleClose();
@@ -266,7 +262,7 @@ export default function Header(props) {
       >
         <div className={classes.toolbarMargin} />
         <List disablePadding>
-          {routes.map(route => (
+          {routes.map((route) => (
             <ListItem
               divider
               key={`${route}${route.activeIndex}`}
@@ -295,10 +291,9 @@ export default function Header(props) {
             component={Link}
             classes={{
               root: classes.drawerItemEstimate,
-              selected: classes.drawerItemSelected
+              selected: classes.drawerItemSelected,
             }}
             to="/estimate"
-            
           >
             <ListItemText className={classes.drawerItem} disableTypography>
               Free Estimate

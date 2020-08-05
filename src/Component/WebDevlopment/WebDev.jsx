@@ -61,7 +61,7 @@ export default function Websites(props) {
               style={{ backgroundColor: "transparent" }}
               component={Link}
               to="/mobileapps"
-              onClick={() => props.setSelectedIndex(2)}
+  
             >
               <img
                 src={backArrow}
@@ -103,7 +103,6 @@ export default function Websites(props) {
               style={{ backgroundColor: "transparent" }}
               component={Link}
               to="/services"
-              onClick={() => props.setSelectedIndex(0)}
             >
               <img src={forwardArrow} alt="Forward to Services Page" />
             </IconButton>
